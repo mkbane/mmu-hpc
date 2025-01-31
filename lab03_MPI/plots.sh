@@ -12,7 +12,7 @@ plot '$1' w lp t 'log-log time'
 EOF
 
 gnuplot -persist <<EOF
-plot [1:130][1:130] '$1' u 1:($t1/\$2) w lp t 'speed-up, Sp'
+plot [1:20][1:20] '$1' u 1:($t1/\$2) w lp t 'speed-up, Sp'
 EOF
 
 gnuplot -persist <<EOF
