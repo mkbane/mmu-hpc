@@ -90,7 +90,6 @@ int main(int argc, char** argv) {
 
 	// minimum absolute val
 	double minabs = x[0];
-#pragma omp parallel for default(none) shared(n, x) private(val) reduction(min:minabs)
 	for (int i=0; i<n; i++) {
 	  val = fabs(x[i]);
 	  minabs = (val < minabs) ? val : minabs;
@@ -98,7 +97,6 @@ int main(int argc, char** argv) {
 
 	// maximum absolute val
 	double maxabs = x[0];
-#pragma omp parallel for default(none) shared(n, x) private(val) reduction(max:maxabs)
 	for (int i=0; i<n; i++) {
 	  val = fabs(x[i]);
 	  maxabs = (val > maxabs) ? val : maxabs;
